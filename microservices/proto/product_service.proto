@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package product_service;
+
+option go_package = "./pb/product_service";
+
+service ProductService {
+  rpc Get(GetRequest) returns (GetResponse) {}
+}
+
+
+message Product {
+  string id               = 1;
+  string name             = 2;
+  uint64 price            = 3;
+  uint64 stars            = 4;
+  repeated string reviews = 5;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message GetResponse {
+  Product product = 1;
+}

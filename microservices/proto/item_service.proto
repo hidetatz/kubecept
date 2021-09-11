@@ -1,13 +1,12 @@
 syntax = "proto3";
 
-package pb;
+package item_service;
 
-option go_package = "./pb";
+option go_package = "./pb/item_service";
 
 service ItemService {
   rpc Get(GetRequest) returns (GetResponse) {}
 }
-
 
 message Item {
   string id    = 1;
